@@ -1,0 +1,12 @@
+{
+  "name": "vue_portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-router": "~5.0.0",
+    "@vue/cli-service": "~5.0.0"
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "vue_portfolio@0.1.0"
+}

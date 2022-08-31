@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.center {
+    @apply flex justify-center items-center;
+}
+.hire{
+    @apply text-red-200 bg-red-800 rounded-md font-bold text-4xl py-4 px-8 shadow-sm shadow-red-200 hover:shadow-red-800 hover:text-red-800 hover:bg-red-200;
+}

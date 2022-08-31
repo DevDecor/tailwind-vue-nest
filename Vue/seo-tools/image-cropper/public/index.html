@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Cropper</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="lib/sweetalert.min.js"></script>
+</head>
+
+<body>
+    <script>
+        async function Swal() {
+            const willDelete = await swal({
+                title: "Are you sure?",
+                text: "Are you sure that you want to delete this file?",
+                content: "input",
+                icon: "warning",
+                buttons: {
+                    confirm: true,
+                    cancel: true
+                },
+                dangerMode: true,
+            });
+
+            if (willDelete) {
+                swal("Deleted!", "Your imaginary file has been deleted! "+willDelete, "success");
+            }else{
+                swal("Error", "Unable to delete file(s)!", "error")
+            }
+        }
+        Swal();
+        // while(goat && i) console.log(goat, i = null);
+    </script>
+</body>
+
+</html>

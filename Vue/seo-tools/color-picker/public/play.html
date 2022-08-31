@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker</title>
+</head>
+
+<body>
+    <div id="app"></div>
+    <input accept="image/*" type="file" id="file" onchange="change()">
+    <img alt="Image" id="img">
+    <script src="lib/tinycolor.js"></script>
+    <script src="lib/color-thief.min.js"></script>
+    <script>
+        // import ColorThief from "lib/color-thief.js";
+        function change(event) {
+            // console.log(event);
+            let img = document.getElementById('img');
+            let file = document.getElementById('file');
+            let reader = new FileReader();
+            img.onload = (e) => {
+                let colors = new ColorThief().getPalette(img, 10).map((e, i) => tinycolor({
+                    r: e[0],
+                    g: e[1],
+                    b: e[2]
+                }).toHexString());
+                // console.log(colors);
+                // document.getElementById('file').innerHTML = colors;
+                console.log(colors);
+            }
+            reader.onload = (e) => {
+                img.src = (e.target.result);
+                // context.drawImage(img, 0, 0);
+                // file.appendChild(img)
+            }
+            reader.readAsDataURL(file.files[0]);
+        }
+    </script>
+</body>
+
+</html>

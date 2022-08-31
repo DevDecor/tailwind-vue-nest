@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue fist tutorial</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<script type="text/javascript" src="vue@3.0.2.js"></script>
+</head>
+<body>
+<div id="app">
+	<ul>
+		<li v-for="book in filtered" :class="{fav: book.isFav}" @click="book.isFav=!book.isFav" class="book">
+			<h3>{{book.title}}</h3> 
+			<p>{{book.author}}</p>
+		</li>
+	</ul>
+</div>
+<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
